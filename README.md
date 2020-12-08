@@ -1,8 +1,8 @@
-# 2D Fluid Simulation
-A 2D particle-based fluid simulation in C++ with OpenGL using SFML. This project was created as a personal portfolio piece, to represent an implementation of lagrangian-based fluid dynamics.
+# Fluid Simulation
+A 2D particle-based fluid simulation in C++ using OpenGL and SFML. This project was created as a personal portfolio piece, representing an implementation of lagrangian-based fluid dynamics.
 
 ## Installation
-  - Clone repository from this github to your local machine
+  - Clone this repository to your local machine
   - Navigate to directory of local repository
   - Open Git Bash or other git cmd within local repository
   - Update SFML by typing: git submodule update --init --recursive
