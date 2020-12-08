@@ -3,7 +3,7 @@ cmake_minimum_required(VERSION 3.11)
 set(CMAKE_CXX_STANDARD 14)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
-project(2D_Fluid_Simulation)
+project(Fluid_Simulation)
 
 #### Setup Directories ####
 #Main output directory
