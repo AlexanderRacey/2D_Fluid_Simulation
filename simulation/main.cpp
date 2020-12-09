@@ -7,8 +7,6 @@
 #include "Constants.h"
 #include "Fluid.h"
 
-using namespace Constants;
-
 // Set application name
 const std::string APPLICATION_TITLE = "2D Fluid Simulation";
 
@@ -47,7 +45,7 @@ sf::Clock frameClock;
 void Load(sf::RenderWindow& window)
 {
 	// Create render texture 
-	renderTexture.create(RENDER_WIDTH, RENDER_HEIGHT);
+	renderTexture.create(Constants::RENDER_WIDTH, Constants::RENDER_HEIGHT);
 	
 	// Pre-load shaders for first time
 	shader.loadFromFile("res/particle_shader.vert", "res/particle_shader.frag");
@@ -61,7 +59,7 @@ void Load(sf::RenderWindow& window)
 	// Set fps string contents
 	fpsText.setFont(font);
 	fpsText.setCharacterSize(16.0f);
-	fpsText.setPosition(RENDER_WIDTH - 80, 10);
+	fpsText.setPosition(Constants::RENDER_WIDTH - 80, 10);
 	fpsText.setString(fpsString + "0");
 
 	// Set instruction text contents
@@ -132,8 +130,8 @@ void Update(sf::RenderWindow& window, Fluid& fluid)
 		// Repulsion force on mouse click
 		if (event.type == sf::Event::MouseButtonPressed)
 		{
-			float x = event.mouseButton.x / WINDOW_SCALE / SCALE;
-			float y = event.mouseButton.y / WINDOW_SCALE / SCALE;
+			float x = event.mouseButton.x / Constants::WINDOW_SCALE / Constants::SCALE;
+			float y = event.mouseButton.y / Constants::WINDOW_SCALE / Constants::SCALE;
 			sf::Vector2f position = sf::Vector2f(x, y);
 
 			// Repulse particles on left mouse click
@@ -183,7 +181,7 @@ int main(int, char const**)
 	Fluid fluid = Fluid();
 
 	// Create window set properties
-	sf::RenderWindow window(sf::VideoMode(RENDER_WIDTH * WINDOW_SCALE, RENDER_HEIGHT * WINDOW_SCALE), APPLICATION_TITLE, sf::Style::Titlebar | sf::Style::Close);
+	sf::RenderWindow window(sf::VideoMode(Constants::RENDER_WIDTH * Constants::WINDOW_SCALE, Constants::RENDER_HEIGHT * Constants::WINDOW_SCALE), APPLICATION_TITLE, sf::Style::Titlebar | sf::Style::Close);
 	window.setKeyRepeatEnabled(false);
 
 	// Call load function
@@ -200,7 +198,7 @@ int main(int, char const**)
 		float time = 0.0f;
 		if (!pauseSimulation)
 		{
-			update(DELTATIME, fluid);
+			update(Constants::DELTATIME, fluid);
 			animationTimer += time;
 		}
 
@@ -240,7 +238,7 @@ void render(sf::RenderWindow& window, sf::RenderTexture& renderTexture, Fluid& f
 
 	// Set water texture to be same as window size
 	sf::Sprite sprite = sf::Sprite(renderTexture.getTexture());
-	sprite.setScale(WINDOW_SCALE, WINDOW_SCALE);
+	sprite.setScale(Constants::WINDOW_SCALE, Constants::WINDOW_SCALE);
 
 	if (display != Display::Water)
 	{
