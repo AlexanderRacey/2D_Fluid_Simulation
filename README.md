@@ -11,4 +11,7 @@ A 2D particle-based fluid simulation in C++ using OpenGL and SFML. This project 
   - Standalone application present within bin/Debug of build directory
 
 ## License
-This project is licensed under the MIT license. See [LICENSE.md](LICENSE.md) for details.
+This project is licensed under the MIT license. See [LICENSE](LICENSE) for details.
+
+## Credit
+Developed by Alexander Racey
